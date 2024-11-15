@@ -72,7 +72,7 @@ public class Depoist extends javax.swing.JFrame {
         getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(534, 243, 37, -1));
         getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 249, 37, -1));
 
-        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/bank/management/system/pkg2/pkg0/atm.jpg"))); // NOI18N
+        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/bankmanagement/atm.jpg"))); // NOI18N
         jLabel4.setText("jLabel4");
         getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1010, 920));
 

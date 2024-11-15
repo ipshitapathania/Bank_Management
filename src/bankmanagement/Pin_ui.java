@@ -79,7 +79,7 @@ public class Pin_ui extends javax.swing.JFrame {
         });
         getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 550, 104, -1));
 
-        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/bank/management/system/pkg2/pkg0/atm.jpg"))); // NOI18N
+        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/bankmanagement/atm.jpg"))); // NOI18N
         jLabel4.setText("jLabel4");
         getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 970, 920));
 

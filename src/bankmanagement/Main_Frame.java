@@ -32,7 +32,7 @@ public class Main_Frame extends javax.swing.JFrame {
         exit_button = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
-        jLabel4 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Main Frame");
@@ -127,9 +127,9 @@ public class Main_Frame extends javax.swing.JFrame {
         });
         getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 520, 180, 30));
 
-        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/bank/management/system/pkg2/pkg0/atm.jpg"))); // NOI18N
-        jLabel4.setText("jLabel4");
-        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 960, 910));
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/bankmanagement/atm.jpg"))); // NOI18N
+        jLabel3.setText("jLabel3");
+        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 960, 880));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -205,6 +205,6 @@ public class Main_Frame extends javax.swing.JFrame {
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel3;
     // End of variables declaration//GEN-END:variables
 }
