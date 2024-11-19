@@ -262,8 +262,6 @@ public class SignUpOne extends javax.swing.JFrame implements ActionListener{
     }//GEN-LAST:event_BbackActionPerformed
 
         public void actionPerformed(ActionEvent ae){
-        String cardno = "169745";
-        String pin = "9618";
         String formno = first;
         String name = Tname.getText();
         String fname = Tfname.getText();
@@ -293,11 +291,11 @@ public class SignUpOne extends javax.swing.JFrame implements ActionListener{
 
         try{
            
-            if(Tname.getText().equals("") && Tfname.getText().equals("") && Tmail.getText().equals("") && Taddress.getText().equals("") && Tcity.getText().equals("") && Tstate.getText().equals("")){
+            if(Tname.getText().equals("") && Tfname.getText().equals("") && ((JTextField) jDateChooser.getDateEditor().getUiComponent()).getText().equals("")&& Tmail.getText().equals("") && Taddress.getText().equals("") && Tcity.getText().equals("") && Tstate.getText().equals("")){
                 JOptionPane.showMessageDialog(null, "Fill all the required fields");
             }else{
                 Conn c1 = new Conn();
-                String q1 = "insert into personal_details values('"+formno+"','"+cardno+"','"+pin+"','"+name+"','"+fname+"','"+dob+"','"+gender+"','"+email+"','"+marital+"','"+address+"','"+state+"','"+city+"','"+pincode+"')";
+                String q1 = "insert into personal_details values('"+formno+"','"+name+"','"+fname+"','"+dob+"','"+gender+"','"+email+"','"+marital+"','"+address+"','"+state+"','"+city+"','"+pincode+"')";
                 c1.s.executeUpdate(q1);
                 setVisible(false);
                 new SignupTwo().setVisible(true);
