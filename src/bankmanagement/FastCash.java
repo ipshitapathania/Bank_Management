@@ -12,12 +12,19 @@ package bankmanagement;
  * 
  */
 import bankmanagement.Main_Frame;
+import java.awt.event.ActionEvent;
+import java.sql.ResultSet;
+import java.util.Date;
+import javax.swing.JButton;
 import javax.swing.JOptionPane;
 public class FastCash extends javax.swing.JFrame {
 
     /**
      * Creates new form MainUI
+     * 
      */
+    String pin;
+    
     public FastCash() {
         initComponents();
     }
@@ -32,13 +39,13 @@ public class FastCash extends javax.swing.JFrame {
     private void initComponents() {
 
         jLabel1 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
-        jButton4 = new javax.swing.JButton();
-        jButton5 = new javax.swing.JButton();
-        jButton6 = new javax.swing.JButton();
-        jButton7 = new javax.swing.JButton();
+        b1 = new javax.swing.JButton();
+        b2 = new javax.swing.JButton();
+        b3 = new javax.swing.JButton();
+        b4 = new javax.swing.JButton();
+        b5 = new javax.swing.JButton();
+        b6 = new javax.swing.JButton();
+        b7 = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -52,74 +59,74 @@ public class FastCash extends javax.swing.JFrame {
         jLabel1.setText("SELECT WITHDRAWAL AMOUNT");
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 320, -1, 34));
 
-        jButton1.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jButton1.setText("Rs 100");
-        jButton1.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(153, 153, 153), new java.awt.Color(204, 204, 204), new java.awt.Color(51, 51, 51), new java.awt.Color(204, 204, 204)));
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        b1.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        b1.setText("Rs 100");
+        b1.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(153, 153, 153), new java.awt.Color(204, 204, 204), new java.awt.Color(51, 51, 51), new java.awt.Color(204, 204, 204)));
+        b1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                b1ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 390, 120, 30));
+        getContentPane().add(b1, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 390, 120, 30));
 
-        jButton2.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jButton2.setText("Rs 500");
-        jButton2.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        b2.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        b2.setText("Rs 500");
+        b2.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        b2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                b2ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 390, 120, 30));
+        getContentPane().add(b2, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 390, 120, 30));
 
-        jButton3.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jButton3.setText("Rs 1000");
-        jButton3.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        jButton3.addActionListener(new java.awt.event.ActionListener() {
+        b3.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        b3.setText("Rs 1000");
+        b3.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        b3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton3ActionPerformed(evt);
+                b3ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 440, 120, 30));
+        getContentPane().add(b3, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 440, 120, 30));
 
-        jButton4.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jButton4.setText("Rs 2000");
-        jButton4.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        jButton4.addActionListener(new java.awt.event.ActionListener() {
+        b4.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        b4.setText("Rs 2000");
+        b4.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        b4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton4ActionPerformed(evt);
+                b4ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 440, 120, 30));
+        getContentPane().add(b4, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 440, 120, 30));
 
-        jButton5.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jButton5.setText("Rs 5000");
-        jButton5.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        jButton5.addActionListener(new java.awt.event.ActionListener() {
+        b5.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        b5.setText("Rs 5000");
+        b5.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        b5.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton5ActionPerformed(evt);
+                b5ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 490, 120, 30));
+        getContentPane().add(b5, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 490, 120, 30));
 
-        jButton6.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jButton6.setText("Rs 10000");
-        jButton6.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        jButton6.addActionListener(new java.awt.event.ActionListener() {
+        b6.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        b6.setText("Rs 10000");
+        b6.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        b6.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton6ActionPerformed(evt);
+                b6ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton6, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 490, 120, 30));
+        getContentPane().add(b6, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 490, 120, 30));
 
-        jButton7.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jButton7.setText("BACK");
-        jButton7.addActionListener(new java.awt.event.ActionListener() {
+        b7.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        b7.setText("BACK");
+        b7.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton7ActionPerformed(evt);
+                b7ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton7, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 540, 120, 30));
+        getContentPane().add(b7, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 540, 120, 30));
 
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/bankmanagement/atm.jpg"))); // NOI18N
         getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, -4, 960, 1000));
@@ -128,45 +135,80 @@ public class FastCash extends javax.swing.JFrame {
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void b1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_b1ActionPerformed
         // TODO add your handling code here:
-        JOptionPane.showMessageDialog(this,"Insufficient balance");
-    }//GEN-LAST:event_jButton1ActionPerformed
+        handleButtonClick(evt);
+    }//GEN-LAST:event_b1ActionPerformed
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+    private void b2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_b2ActionPerformed
         // TODO add your handling code here:
-         JOptionPane.showMessageDialog(this,"Insufficient balance");
-    }//GEN-LAST:event_jButton2ActionPerformed
+          handleButtonClick(evt);
+    }//GEN-LAST:event_b2ActionPerformed
 
-    private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
+    private void b7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_b7ActionPerformed
         // TODO add your handling code here:
         setVisible(false);
         new Main_Frame().setVisible(true);
-    }//GEN-LAST:event_jButton7ActionPerformed
+    }//GEN-LAST:event_b7ActionPerformed
 
-    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+    private void b3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_b3ActionPerformed
         // TODO add your handling code here:
         JOptionPane.showMessageDialog(this,"Insufficient balance");
-    }//GEN-LAST:event_jButton3ActionPerformed
+    }//GEN-LAST:event_b3ActionPerformed
 
-    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+    private void b4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_b4ActionPerformed
         // TODO add your handling code here:
-        JOptionPane.showMessageDialog(this,"Insufficient balance");
-    }//GEN-LAST:event_jButton4ActionPerformed
+         handleButtonClick(evt);
+    }//GEN-LAST:event_b4ActionPerformed
 
-    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
+    private void b5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_b5ActionPerformed
         // TODO add your handling code here:
-        JOptionPane.showMessageDialog(this,"Insufficient balance");
-    }//GEN-LAST:event_jButton5ActionPerformed
+        handleButtonClick(evt);
+    }//GEN-LAST:event_b5ActionPerformed
 
-    private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
+    private void b6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_b6ActionPerformed
         // TODO add your handling code here:
-        JOptionPane.showMessageDialog(this,"Insufficient balance");
-    }//GEN-LAST:event_jButton6ActionPerformed
+         handleButtonClick(evt);
+    }//GEN-LAST:event_b6ActionPerformed
 
     /**
      * @param args the command line arguments
      */
+     public void handleButtonClick(ActionEvent evt) {
+        try {
+            String amount = ((JButton)evt.getSource()).getText().substring(3); //k
+            Conn c = new Conn();
+            ResultSet rs = c.s.executeQuery("select * from bank where pin = '"+pin+"'");
+            int balance = 0;
+            while (rs.next()) {
+                if (rs.getString("mode").equals("Deposit")) {
+                    balance += Integer.parseInt(rs.getString("amount"));
+                } else {
+                    balance -= Integer.parseInt(rs.getString("amount"));
+                }
+            } String num = "17";
+            if (evt.getSource() != b7 && balance < Integer.parseInt(amount)) {
+                JOptionPane.showMessageDialog(null, "Insuffient Balance");
+                return;
+            }
+
+            if (evt.getSource() == b7) {
+                this.setVisible(false);
+                new sample.Main_Frame().setVisible(true);
+            }else{
+                Date date = new Date();
+                c.s.executeUpdate("insert into bank values('"+pin+"', '"+date+"', 'Withdrawl', '"+amount+"')");
+                JOptionPane.showMessageDialog(null, "Rs. "+amount+" Debited Successfully");
+                    
+                setVisible(false);
+                new sample.Main_Frame().setVisible(true);
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+    }
+    
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
@@ -201,13 +243,13 @@ public class FastCash extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
-    private javax.swing.JButton jButton5;
-    private javax.swing.JButton jButton6;
-    private javax.swing.JButton jButton7;
+    private javax.swing.JButton b1;
+    private javax.swing.JButton b2;
+    private javax.swing.JButton b3;
+    private javax.swing.JButton b4;
+    private javax.swing.JButton b5;
+    private javax.swing.JButton b6;
+    private javax.swing.JButton b7;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     // End of variables declaration//GEN-END:variables

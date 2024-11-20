@@ -5,6 +5,8 @@
 package bankmanagement;
 
 import bankmanagement.Main_Frame;
+import java.sql.ResultSet;
+import bankmanagement.Conn;
 
 /**
  *
@@ -14,9 +16,27 @@ public class BalanceEnquiry extends javax.swing.JFrame {
 
     /**
      * Creates new form BalanceEnquiry
+     * 
      */
+    String pin;
+    private String balance;
     public BalanceEnquiry() {
+        int balance = 0;
         initComponents();
+        try{
+            Conn c1 = new Conn();
+            ResultSet rs = c1.s.executeQuery("select * from bank where pin = '"+pin+"'");
+            while (rs.next()) {
+                if (rs.getString("mode").equals("Deposit")) {
+                    balance += Integer.parseInt(rs.getString("amount"));
+                } else {
+                    balance -= Integer.parseInt(rs.getString("amount"));
+                }
+            }
+        }catch(Exception e){}
+        
+        //l1.setText("Your Current Account Balance is Rs "+balance);
+        setVisible(true);
     }
 
     /**
